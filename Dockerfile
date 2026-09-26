@@ -117,4 +117,5 @@ WORKDIR /app/public
 
 HEALTHCHECK CMD curl --fail http://localhost:80/ || exit 1
 
-ENTRYPOINT ["sh", "/app/public/docker/entrypoint.sh" ]
+# ENTRYPOINT ["/app/public/docker/entrypoint.sh"]
+CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
